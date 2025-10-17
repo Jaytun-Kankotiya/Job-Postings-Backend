@@ -1,6 +1,4 @@
-import { data } from "react-router-dom"
 import jobModel from "../models/JobModel.js"
-import { json } from "express"
 
 
 const validJobTypes = ["Full-time (On-site)", "Part-time (On-site)", "Full-time (Remote)", "Part-time (Remote)"]
