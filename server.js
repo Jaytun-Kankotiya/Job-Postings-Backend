@@ -9,14 +9,10 @@ import jobRouter from './routes/jobRoute.js'
 const app = express()
 app.use(express.json())
 
-const allowedOrigins = ['http://localhost:5173', 'https://job-postings.vercel.app/']
+const allowedOrigins = ['http://localhost:5173', 'https://job-postings.vercel.app']
 
 app.use(cors({
-    origin: function(origin, callback) {
-        if(!origin) return callback(null, true)
-        if(allowedOrigins.includes(origin)) return callback(null, true)
-        callback(new Error("Not allowed by CORs"))
-    },
+    origin: allowedOrigins,
     credentials: true,
     optionsSuccessStatus: 200
 }))
